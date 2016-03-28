@@ -2,7 +2,7 @@ Summary:	GridFields - convenient, algebraic manipulation of unstructured grids
 Summary(pl.UTF-8):	GridFields - wygodne operacje algebraiczne na tablicach bez struktury
 Name:		gridfields
 Version:	1.0.5
-Release:	1
+Release:	2
 # COPYING and most recent source files (GFError.*) say so
 License:	LGPL v2.1+
 Group:		Libraries
@@ -11,6 +11,7 @@ Group:		Libraries
 # for now, use hyrax-dependencies module
 Source0:	https://github.com/OPENDAP/hyrax-dependencies/raw/master/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	54819cdeb22e894921c7e84f460ae75a
+Patch0:		%{name}-config.patch
 URL:		https://github.com/OPENDAP/gridfields/
 BuildRequires:	autoconf >= 2.68
 BuildRequires:	automake
@@ -57,6 +58,7 @@ Statyczna biblioteka GridFields.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}

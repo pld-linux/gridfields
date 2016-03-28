@@ -1,0 +1,25 @@
+--- gridfields-1.0.5/gridfields-config.in.orig	2015-12-04 20:41:06.000000000 +0100
++++ gridfields-1.0.5/gridfields-config.in	2016-03-28 21:25:27.614407375 +0200
+@@ -4,8 +4,7 @@
+ #
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
+-libdir64=${exec_prefix}/lib64
++libdir=@libdir@
+ includedir=${prefix}/include
+ 
+ usage()
+@@ -60,7 +59,11 @@
+ 	;;
+ 
+     --libs)
+-       	echo "-L${libdir64} -L${libdir} -lgridfields @LIBS@"
++        if [ "${prefix}" = "/usr" ]; then
++       	echo "-lgridfields @LIBS@"
++        else
++       	echo "-L${libdir} -lgridfields @LIBS@"
++	fi
+         ;;
+ 
+     --prefix)
