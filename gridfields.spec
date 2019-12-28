@@ -2,7 +2,7 @@ Summary:	GridFields - convenient, algebraic manipulation of unstructured grids
 Summary(pl.UTF-8):	GridFields - wygodne operacje algebraiczne na tablicach bez struktury
 Name:		gridfields
 Version:	1.0.5
-Release:	2
+Release:	3
 # COPYING and most recent source files (GFError.*) say so
 License:	LGPL v2.1+
 Group:		Libraries
